@@ -1,0 +1,5 @@
+* * * * * /usr/bin/wget -qO- https://rego.igniteyouth.com/ScheduledJobs/RunJobs
+* * * * * /usr/bin/wget -qO- http://devrego.igniteyouth.com/ScheduledJobs/RunJobs
+* * * * * /usr/bin/wget -qO- https://rego.igniteyouth.com
+* * * * * /usr/bin/wget -qO- https://www.fertilitypinpoint.com/scheduledjobs/runjobs > /home/damien/cronresults
+* * * * * /usr/bin/curl https://nosnch.in/bfffe54ed7
