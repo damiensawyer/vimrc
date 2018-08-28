@@ -1,4 +1,14 @@
-source dnvm.sh
+alias ll='ls -alh'
+alias gp='~/gp.sh'
+
+alias cp="cp -i"                          # confirm before overwriting something
+alias df='df -h'                          # human-readable sizes
+alias free='free -m'                      # show sizes in MB
+alias np='nano -w PKGBUILD'
+alias more=less
+alias xclip="xclip -selection c"
+
+
 #http://ezprompt.net/
 # get current branch in git repo
 function parse_git_branch() {
