@@ -1,3 +1,4 @@
+cp .alias ~/
 cp .bash_profile ~/
 cp .bashrc ~/
 cp .gitconfig ~/

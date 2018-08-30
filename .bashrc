@@ -1,3 +1,4 @@
+source ~/.alias
 alias ll='ls -alh'
 alias gp='~/gp.sh'
 
@@ -7,7 +8,8 @@ alias free='free -m'                      # show sizes in MB
 alias np='nano -w PKGBUILD'
 alias more=less
 alias xclip="xclip -selection c"
-
+alias vi="vim"
+alias cal="cal -3"
 
 #http://ezprompt.net/
 # get current branch in git repo
