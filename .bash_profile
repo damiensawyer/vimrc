@@ -1,3 +1,4 @@
+exec xrandr --output eDP1 --mode 3200x1800 --scale 0.7x0.7
 alias dir='ls -al'
 alias ll='ls -alh'
 alias bs='cd ~/code/DNS/BodyshopWindows'
