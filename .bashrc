@@ -8,6 +8,7 @@ alias free='free -m'                      # show sizes in MB
 alias np='nano -w PKGBUILD'
 alias more=less
 alias xclip="xclip -selection c"
+alias pbpaste="xclip -selection clipboard -o"
 alias vi="vim"
 alias cal="cal -3"
 
