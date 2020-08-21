@@ -7,4 +7,4 @@ alias cqrs="cd ~/code/X20.CQRS/src/CQRS"
 alias coret="cd ~/code/X20.CQRS/src/CQRS/X20.CQRS.Core.Tests/"
 alias cored="cd ~/code/X20.CQRS/src/CQRS/X20.CQRS.DB.Tests/"
 alias gh="cd ~/code/X20.CQRS/src/CQRS/integratorHosts/genericHost"
-
+alias dc="cd ~/code/DCAP"
