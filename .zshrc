@@ -9,6 +9,8 @@ export ZSH="/Users/damiensawyer/.oh-my-zsh"
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 ZSH_THEME="powerlevel9k/powerlevel9k"
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(context vcs dir)
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status root_indicator background_jobs history time)
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -98,12 +100,21 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+
+
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
+# https://github.com/wting/autojump (need to install it!!)
+[[ -s /Users/damiensawyer/.autojump/etc/profile.d/autojump.sh ]] && source /Users/damiensawyer/.autojump/etc/profile.d/autojump.sh
+
+	autoload -U compinit && compinit -u
+
 # Aliases
 alias ll='ls -al'
 alias gp='~/gp.sh'
-# source
 source ~/.alias
+
+neofetch
+
