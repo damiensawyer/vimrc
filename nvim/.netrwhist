@@ -1,0 +1,8 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =6
+let g:netrw_dirhist_1='/home/damien/code/DCAP/source/CQRS/testing/DCAP.CQRS.Testing.Unit/Tests/Maps/CommonCQRSReflection'
+let g:netrw_dirhist_2='/home/damien/code/DCAP/source/CQRS/testing/DCAP.CQRS.Testing.Unit/Tests/Maps'
+let g:netrw_dirhist_3='/home/damien/code/DCAP/source/CQRS/testing/DCAP.CQRS.Testing.Unit/Tests/Maps/IntegratorMaps'
+let g:netrw_dirhist_4='/home/damien/code/DCAP/source/CQRS/testing/DCAP.CQRS.Testing.Unit/Tests/Maps/CommonCQRSReflection'
+let g:netrw_dirhist_5='/home/damien/code/DCAP/source/CQRS/testing/DCAP.CQRS.Testing.Unit/Tests/Maps'
+let g:netrw_dirhist_6='/home/damien/code/DCAP/source/CQRS/testing/DCAP.CQRS.Testing.Unit/Tests/Maps/CommonCQRSReflection'
