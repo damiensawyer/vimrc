@@ -24,6 +24,9 @@ if (has("termguicolors"))
  set termguicolors
 endif
 
+" https://learnvimscriptthehardway.stevelosh.com/chapters/06.html
+let mapleader = "-"
+
 " Theme
 syntax enable
 " colorscheme dracula
@@ -54,6 +57,8 @@ set number relativenumber
 " turn terminal to normal mode with escape
 tnoremap <Esc> <C-\><C-n>
 
+" lets you quickly open init.vim for editing!
+nnoremap <leader>ev :vsplit $MYVIMRC<cr>
 " use alt+hjkl to move between split/vsplit panels
 tnoremap <A-h> <C-\><C-n><C-w>h
 tnoremap <A-j> <C-\><C-n><C-w>j
