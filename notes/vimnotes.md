@@ -25,3 +25,9 @@ Navigate html Tags - This is great v a t [or] v i t  to select inner or outer ta
 ## Links
 [cutting to system clipboard](https://vi.stackexchange.com/a/23133/5998)
 [Karsten's Config Needs Neovim v6](https://github.com/damiensawyer/neovim-config)
+
+
+# Notes on Neovim
+[From here](https://betterprogramming.pub/setting-up-neovim-for-web-development-in-2020-d800de3efacd)
+Note that when following that I had to install silversearcher-ag (via apt)
+I copied the config file to /home/damien/.config/nvim/init.vim then ran ```nvim +PlugInstall```.
