@@ -5,6 +5,7 @@
 	autosetuprebase = never
 [core]
 	excludesfile = /Users/damiensawyer/.gitignore_global
+	editor = vim
 [difftool "sourcetree"]
 	cmd = kdiff3 \"$LOCAL\" \"$REMOTE\"
 	path = 
