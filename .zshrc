@@ -2,7 +2,7 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="/Users/damiensawyer/.oh-my-zsh"
+export ZSH="/home/damien/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -112,9 +112,18 @@ export NVM_DIR="$HOME/.nvm"
 	autoload -U compinit && compinit -u
 
 # Aliases
-alias ll='ls -al'
-alias gp='~/gp.sh'
-source ~/.alias
-
 neofetch
+source ~/.alias
+alias ll='ls -alh'
+alias ls='exa -alh --git'
+alias lst='exa -alh --git --tree --level=2'
+alias gp='~/gp.sh'
+alias nvim='/home/damien/nvim'
 
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+. /usr/share/doc/fzf/examples/key-bindings.zsh
+
+. /usr/share/autojump/autojump.sh
