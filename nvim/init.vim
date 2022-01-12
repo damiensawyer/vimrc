@@ -9,7 +9,6 @@ call plug#begin("~/.vim/plugged")
   Plug 'leafgarland/typescript-vim'
   Plug 'peitalin/vim-jsx-typescript'
 
-
   " File Explorer with Icons
   Plug 'scrooloose/nerdtree'
   Plug 'ryanoasis/vim-devicons'
@@ -17,6 +16,9 @@ call plug#begin("~/.vim/plugged")
   " File Search
   Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
   Plug 'junegunn/fzf.vim'
+  " add / remove comments
+  Plug 'tpope/vim-commentary'
+  Plug 'tpope/vim-surround'
 call plug#end()
 
 " Enable theming support
@@ -57,6 +59,8 @@ set number relativenumber
 " turn terminal to normal mode with escape
 tnoremap <Esc> <C-\><C-n>
 
+" work around escape key j and k will exit insert mode. 
+inoremap jk <Esc> ^`
 " lets you quickly open init.vim for editing!
 nnoremap <leader>ev :vsplit $MYVIMRC<cr>
 " use alt+hjkl to move between split/vsplit panels
