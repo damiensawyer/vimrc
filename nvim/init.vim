@@ -9,7 +9,6 @@ call plug#begin("~/.vim/plugged")
   Plug 'leafgarland/typescript-vim'
   Plug 'peitalin/vim-jsx-typescript'
 
-
   " File Explorer with Icons
   Plug 'scrooloose/nerdtree'
   Plug 'ryanoasis/vim-devicons'
@@ -17,6 +16,9 @@ call plug#begin("~/.vim/plugged")
   " File Search
   Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
   Plug 'junegunn/fzf.vim'
+  " add / remove comments
+  Plug 'tpope/vim-commentary'
+  Plug 'tpope/vim-surround'
 call plug#end()
 
 " Enable theming support
@@ -24,9 +26,12 @@ if (has("termguicolors"))
  set termguicolors
 endif
 
+" https://learnvimscriptthehardway.stevelosh.com/chapters/06.html
+let mapleader = "-"
+
 " Theme
 syntax enable
-colorscheme dracula
+" colorscheme dracula
 
 let g:NERDTreeShowHidden = 1
 let g:NERDTreeMinimalUI = 1
@@ -54,6 +59,10 @@ set number relativenumber
 " turn terminal to normal mode with escape
 tnoremap <Esc> <C-\><C-n>
 
+" work around escape key j and k will exit insert mode. 
+inoremap jk <Esc> ^`
+" lets you quickly open init.vim for editing!
+nnoremap <leader>ev :vsplit $MYVIMRC<cr>
 " use alt+hjkl to move between split/vsplit panels
 tnoremap <A-h> <C-\><C-n><C-w>h
 tnoremap <A-j> <C-\><C-n><C-w>j
@@ -63,7 +72,11 @@ nnoremap <A-h> <C-w>h
 nnoremap <A-j> <C-w>j
 nnoremap <A-k> <C-w>k
 nnoremap <A-l> <C-w>l
-
+" Unmap the arrow keys to force hjkl (https://vi.stackexchange.com/a/5854)
+noremap <Up> <Nop>
+noremap <Down> <Nop>
+noremap <Left> <Nop>
+noremap <Right> <Nop>
 " start terminal in insert mode
 au BufEnter * if &buftype == 'terminal' | :startinsert | endif
 
