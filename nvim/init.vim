@@ -3,8 +3,8 @@ call plug#begin("~/.vim/plugged")
   Plug 'dracula/vim'
 
   " Language Client
-  Plug 'neoclide/coc.nvim', {'branch': 'release'}
-  let g:coc_global_extensions = ['coc-emmet', 'coc-css', 'coc-html', 'coc-json', 'coc-prettier', 'coc-tsserver']
+  " Plug 'neoclide/coc.nvim', {'branch': 'release'}
+  " let g:coc_global_extensions = ['coc-emmet', 'coc-css', 'coc-html', 'coc-json', 'coc-prettier', 'coc-tsserver']
   " TypeScript Highlighting
   Plug 'leafgarland/typescript-vim'
   Plug 'peitalin/vim-jsx-typescript'
@@ -30,7 +30,7 @@ endif
 let mapleader = "-"
 
 " Theme
-syntax enable
+" syntax enable
 " colorscheme dracula
 
 let g:NERDTreeShowHidden = 1
@@ -60,7 +60,7 @@ set number relativenumber
 tnoremap <Esc> <C-\><C-n>
 
 " work around escape key j and k will exit insert mode. 
-inoremap jk <Esc> ^`
+inoremap kj <Esc> ^`
 " lets you quickly open init.vim for editing!
 nnoremap <leader>ev :vsplit $MYVIMRC<cr>
 " use alt+hjkl to move between split/vsplit panels
