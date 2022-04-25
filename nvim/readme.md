@@ -7,8 +7,7 @@ https://www.linuxfordevices.com/tutorials/linux/vim-plug-install-plugins
 
 The command I typed was 
 
-curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs \
-    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
 NOTE THAT I CHANGED THE PATH from what was in the article to put it in the nvim config, not ~/.vim. 
 
