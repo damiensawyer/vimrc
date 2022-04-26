@@ -88,3 +88,38 @@ function! OpenTerminal()
 endfunction
 nnoremap <c-n> :call OpenTerminal()<CR>
 
+
+" switch marks to make lowercase global https://unix.stackexchange.com/questions/154845/reverse-global-and-local-marks-in-vi-vim
+nnoremap ma mA
+nnoremap mb mB
+nnoremap mc mC
+nnoremap md mD
+nnoremap me mE
+nnoremap mf mF
+nnoremap mg mG
+nnoremap mh mH
+nnoremap `a `A
+nnoremap 'a 'A
+nnoremap `b `B
+nnoremap 'b 'B
+nnoremap `c `C
+nnoremap 'c 'C
+nnoremap `d `D
+nnoremap 'd 'D
+nnoremap `e `E
+nnoremap 'e 'E
+nnoremap `f `F
+nnoremap 'f 'F
+nnoremap `g `G
+nnoremap 'g 'G
+nnoremap `h `H
+nnoremap 'h 'H
+
+" Don't let deletes clobber what was yanked!! Put deletes into the d register. https://stackoverflow.com/a/60119781/494635
+nnoremap d "dd           "send latest delete to d register
+nnoremap D "dD           "send latest delete to d register 
+nnoremap dd "ddd         "send latest delete to d register
+nnoremap x "_x           "send char deletes to black hole, not worth saving
+nnoremap <leader>p "dp   "paste what was deleted
+nnoremap <leader>P "dP   "paste what was deleted
+
