@@ -19,6 +19,12 @@ call plug#begin("~/.vim/plugged")
   " add / remove comments
   Plug 'tpope/vim-commentary'
   Plug 'tpope/vim-surround'
+  Plug 'tpope/vim-sensible'
+
+  " from https://bhupesh.me/learn-how-to-use-code-snippets-vim-cowboy/
+  Plug 'SirVer/ultisnips'
+  Plug 'honza/vim-snippets'
+
 call plug#end()
 
 " Enable theming support
@@ -87,4 +93,9 @@ function! OpenTerminal()
   resize 10
 endfunction
 nnoremap <c-n> :call OpenTerminal()<CR>
+
+" https://bhupesh.me/learn-how-to-use-code-snippets-vim-cowboy/
+let g:UltiSnipsExpandTrigger="<tab>"
+" list all snippets for current filetype
+let g:UltiSnipsListSnippets="<c-l>"
 
