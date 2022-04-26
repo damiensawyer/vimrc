@@ -3,7 +3,6 @@ cp .bash_profile ~/
 cp .bashrc ~/
 cp .gitconfig ~/
 # cp .vimrc ~/
-cp .nvmrc ~/
 cp ./zshrc ~/
 cp gp.sh ~/
 ln -s vimrc ~/.vim/vimrc
