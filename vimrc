@@ -65,6 +65,11 @@ set number relativenumber
 " turn terminal to normal mode with escape
 tnoremap <Esc> <C-\><C-n>
 
+set wrap
+
+" stops line brekaing in the middle of word
+set linebreak
+
 " work around escape key j and k will exit insert mode. 
 inoremap kj <Esc> ^`
 " lets you quickly open init.vim for editing!
