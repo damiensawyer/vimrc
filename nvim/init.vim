@@ -8,6 +8,7 @@ call plug#begin("~/.vim/plugged")
   " TypeScript Highlighting
   Plug 'leafgarland/typescript-vim'
   Plug 'peitalin/vim-jsx-typescript'
+  Plug 'dhruvasagar/vim-zoom'
 
   " File Explorer with Icons
   Plug 'scrooloose/nerdtree'
@@ -115,11 +116,20 @@ nnoremap 'g 'G
 nnoremap `h `H
 nnoremap 'h 'H
 
-" Don't let deletes clobber what was yanked!! Put deletes into the d register. https://stackoverflow.com/a/60119781/494635
-nnoremap d "dd           "send latest delete to d register
-nnoremap D "dD           "send latest delete to d register 
-nnoremap dd "ddd         "send latest delete to d register
-nnoremap x "_x           "send char deletes to black hole, not worth saving
-nnoremap <leader>p "dp   "paste what was deleted
-nnoremap <leader>P "dP   "paste what was deleted
 
+" zooming windows https://stackoverflow.com/a/60639802/494635
+" https://tuckerchapman.com/2018/06/16/how-to-use-the-vim-leader-key/
+function! ToggleZoom(zoom)
+  if exists("t:restore_zoom") && (a:zoom == v:true || t:restore_zoom.win != winnr())
+      exec t:restore_zoom.cmd
+      unlet t:restore_zoom
+  elseif a:zoom
+      let t:restore_zoom = { 'win': winnr(), 'cmd': winrestcmd() }
+      exec "normal \<C-W>\|\<C-W>_"
+  endif
+endfunction
+
+augroup restorezoom
+    au WinEnter * silent! :call ToggleZoom(v:false)
+augroup END
+nnoremap <silent> <Leader>+ :call ToggleZoom(v:true)<CR>
