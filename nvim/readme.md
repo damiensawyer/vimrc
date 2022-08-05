@@ -60,5 +60,6 @@ nvim +PlugInstall
 
 ## mixing Vim and NeoVim (latest)
 [See](https://vi.stackexchange.com/a/15548/5998)
-I copied vimrc, autoload and pluggged into ~/.vim. 
+I copied vimrc, autoload and pluggged into ~/.vim. I have a feeling I might not needed to have copied plugged, and that it downloads.
 I then followed that SO post to refer to that file in Neovim. Config worked in both :-)
+
