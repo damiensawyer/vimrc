@@ -22,6 +22,7 @@ call plug#begin("~/.vim/plugged")
   Plug 'tpope/vim-surround'
 
   " rust stuff from https://blog.logrocket.com/configuring-vim-rust-development/. His config is https://github.com/zupzup/dotfiles-linux/blob/main/.vimrc
+  " Note that you have to run :CocInstall coc-rust-analyzer after PlugInstall
   Plug 'rust-lang/rust.vim'
   " coc - C-space to suggest, C-y to accept
   Plug 'neoclide/coc.nvim', {'branch': 'release'}
@@ -65,7 +66,7 @@ let mapleader = "-"
 
 " Theme
 " syntax enable
-" colorscheme dracula
+colorscheme dracula
 
 let g:NERDTreeShowHidden = 1
 let g:NERDTreeMinimalUI = 1
