@@ -48,3 +48,11 @@ see:
 https://www.linuxfordevices.com/tutorials/linux/vim-plug-install-plugins
 The command I typed was 
 curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+
+# Installing on Windows under cygwin
+installed neovim with scoop
+scoop install ag # this is used in the config? silver searcher or something
+aliased vim to nvim in .bashrc
+created c:\Users\Damien.Sawyer\AppData\Local\nvim\ and copied init.vim into there
+dowloaded https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim and put into c:\Users\Damien.Sawyer\AppData\Local\nvim\autoload
+nvim +PlugInstall
