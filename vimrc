@@ -8,6 +8,7 @@ call plug#begin("~/.vim/plugged")
   " TypeScript Highlighting
   Plug 'leafgarland/typescript-vim'
   Plug 'peitalin/vim-jsx-typescript'
+  Plug 'dhruvasagar/vim-zoom'
 
   " File Explorer with Icons
   Plug 'scrooloose/nerdtree'
@@ -19,12 +20,6 @@ call plug#begin("~/.vim/plugged")
   " add / remove comments
   Plug 'tpope/vim-commentary'
   Plug 'tpope/vim-surround'
-  Plug 'tpope/vim-sensible'
-
-  " from https://bhupesh.me/learn-how-to-use-code-snippets-vim-cowboy/
-  Plug 'SirVer/ultisnips'
-  Plug 'honza/vim-snippets'
-
 call plug#end()
 
 " Enable theming support
@@ -65,11 +60,6 @@ set number relativenumber
 " turn terminal to normal mode with escape
 tnoremap <Esc> <C-\><C-n>
 
-set wrap
-
-" stops line brekaing in the middle of word
-set linebreak
-
 " work around escape key j and k will exit insert mode. 
 inoremap kj <Esc> ^`
 " lets you quickly open init.vim for editing!
@@ -99,8 +89,47 @@ function! OpenTerminal()
 endfunction
 nnoremap <c-n> :call OpenTerminal()<CR>
 
-" https://bhupesh.me/learn-how-to-use-code-snippets-vim-cowboy/
-let g:UltiSnipsExpandTrigger="<tab>"
-" list all snippets for current filetype
-let g:UltiSnipsListSnippets="<c-l>"
 
+" switch marks to make lowercase global https://unix.stackexchange.com/questions/154845/reverse-global-and-local-marks-in-vi-vim
+nnoremap ma mA
+nnoremap mb mB
+nnoremap mc mC
+nnoremap md mD
+nnoremap me mE
+nnoremap mf mF
+nnoremap mg mG
+nnoremap mh mH
+nnoremap `a `A
+nnoremap 'a 'A
+nnoremap `b `B
+nnoremap 'b 'B
+nnoremap `c `C
+nnoremap 'c 'C
+nnoremap `d `D
+nnoremap 'd 'D
+nnoremap `e `E
+nnoremap 'e 'E
+nnoremap `f `F
+nnoremap 'f 'F
+nnoremap `g `G
+nnoremap 'g 'G
+nnoremap `h `H
+nnoremap 'h 'H
+
+
+" zooming windows https://stackoverflow.com/a/60639802/494635
+" https://tuckerchapman.com/2018/06/16/how-to-use-the-vim-leader-key/
+function! ToggleZoom(zoom)
+  if exists("t:restore_zoom") && (a:zoom == v:true || t:restore_zoom.win != winnr())
+      exec t:restore_zoom.cmd
+      unlet t:restore_zoom
+  elseif a:zoom
+      let t:restore_zoom = { 'win': winnr(), 'cmd': winrestcmd() }
+      exec "normal \<C-W>\|\<C-W>_"
+  endif
+endfunction
+
+augroup restorezoom
+    au WinEnter * silent! :call ToggleZoom(v:false)
+augroup END
+nnoremap <silent> <Leader>+ :call ToggleZoom(v:true)<CR>
