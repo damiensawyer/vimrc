@@ -20,8 +20,42 @@ call plug#begin("~/.vim/plugged")
   " add / remove comments
   Plug 'tpope/vim-commentary'
   Plug 'tpope/vim-surround'
-call plug#end()
 
+  " rust stuff from https://blog.logrocket.com/configuring-vim-rust-development/. His config is https://github.com/zupzup/dotfiles-linux/blob/main/.vimrc
+  " Note that you have to run :CocInstall coc-rust-analyzer after PlugInstall
+  Plug 'rust-lang/rust.vim'
+  " coc - C-space to suggest, C-y to accept
+  Plug 'neoclide/coc.nvim', {'branch': 'release'}
+  Plug 'dense-analysis/ale'
+
+  
+call plug#end()
+let g:rustfmt_autosave = 1
+let g:rustfmt_emit_files = 1
+let g:rustfmt_fail_silently = 0
+" This might need to change https://stackoverflow.com/a/72341811/494635
+let g:coc_node_path = '/home/damien/.nvm/versions/node/v16.14.2/bin/node'
+inoremap <silent><expr> <TAB>
+      \ pumvisible() ? "\<C-n>" :
+      \ <SID>check_back_space() ? "\<TAB>" :
+      \ coc#refresh()
+inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+
+function! s:check_back_space() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
+
+if has('nvim')
+  inoremap <silent><expr> <c-space> coc#refresh()
+else
+  inoremap <silent><expr> <c-@> coc#refresh()
+endif
+
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
 " Enable theming support
 if (has("termguicolors"))
  set termguicolors
@@ -32,7 +66,7 @@ let mapleader = "-"
 
 " Theme
 " syntax enable
-" colorscheme dracula
+colorscheme dracula
 
 let g:NERDTreeShowHidden = 1
 let g:NERDTreeMinimalUI = 1
